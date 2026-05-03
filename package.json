@@ -1,0 +1,26 @@
+{
+  "name": "banco",
+  "version": "1.0.0",
+  "bin": "app.js",
+  "pkg": {
+    "targets": [
+      "node18-win-x64"
+    ],
+    "assets": [
+      "./src/bancoDb.json"
+    ]
+  },
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app.js",
+    "alumnos": "nodemon edadesAlumnos.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
