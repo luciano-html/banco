@@ -1,0 +1,4 @@
+esbuild app.js --bundle --platform=node --outfile=build.js
+
+
+pkg build.js --targets node18-win-x64 --output banco.exe
