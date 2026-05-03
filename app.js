@@ -1,7 +1,7 @@
 import readline from "node:readline/promises";
 import { stdin as input, stdout as output } from "node:process";
 import { readFileSync, writeFileSync } from 'fs';
-import { saldoLeer } from "./src/db.js";
+import { bancoDB } from "./src/db.js";
 const rl = readline.createInterface({ input, output });
 
 
@@ -9,14 +9,13 @@ function question(prompt) {
     return new Promise(resolve => rl.question(prompt, resolve));
 }
 
-
-
-
 async function main() {
     
+    let saldo = bancoDB.saldoDb
+    
     console.clear()
-    console.log(leerDb);
-    let saldo = saldoLeer;
+    
+    
     let finalizar = false;
     let montoExtraer = 0;
     let inputUsuario = 0;
@@ -45,7 +44,7 @@ async function main() {
                     bancoDB.saldoDb = saldo
 
 
-                    writeFileSync('./bancoDb.json', JSON.stringify(bancoDB, null, 2));
+                    writeFileSync('./src/bancoDb.json', JSON.stringify(bancoDB, null, 2));
                     console.clear()
                     console.log("---------------------");
                     console.log("Usted extrajo: $", monto);
@@ -72,7 +71,7 @@ async function main() {
                 if (ingresar > 0) {
                     saldo = saldo + ingresar;
                     bancoDB.saldoDb = saldo
-                    writeFileSync('./bancoDb.json', JSON.stringify(bancoDB, null, 2));
+                    writeFileSync('./src/bancoDb.json', JSON.stringify(bancoDB, null, 2));
 
 
                     console.log("Usted ingreso: $", ingresar);
