@@ -1,1 +1,1 @@
-falta modularizar la interfaz
+hay que modularizar las operaciones

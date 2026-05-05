@@ -1,5 +1,5 @@
 
-export function mainDisplay() {
+export function mainUI() {
 
     console.log("---------------------");
     console.log("1. Retirar dinero");
@@ -11,7 +11,7 @@ export function mainDisplay() {
 
 }
 
-export function extraccionDisplay(monto, saldo) {
+export function extraccionUI(monto, saldo) {
     console.clear()
     console.log("---------------------");
     console.log("Usted extrajo: $", monto);
@@ -19,21 +19,21 @@ export function extraccionDisplay(monto, saldo) {
 }
 
 
-export function sinSaldoDisplay(saldo) {
+export function sinSaldoUI(saldo) {
     console.clear()
     console.log("---------------------");
     console.log("Saldo insuficiente, no puede extraer mas de: $", saldo);
     console.log("¿Desea salir? 1.Si 2.No");
 }
 
-export function ingresarDisplay(ingresar,saldo){
+export function ingresarUI(ingresar,saldo){
     console.clear()
     console.log("---------------------");
     console.log("Usted ingreso: $", ingresar);
     console.log("Su nuevo saldo es de: $", saldo);
 }
 
-export function consultarSaldoDisplay(saldo){
+export function consultarSaldoUI(saldo){
     console.clear()
     console.log("---------------------");
     console.log("Su saldo actual es de: $", saldo);
@@ -47,6 +47,6 @@ export function programaTerminadoMensaje(){
     console.log("---------------------");
 }
 
-export function limpiarDisplay(){
+export function limpiarUI(){
     console.clear()
 }

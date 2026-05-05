@@ -2,7 +2,7 @@ import { bancoDB } from "./db.js";
 import readline from "node:readline/promises";
 import { stdin as input, stdout as output } from "node:process";
 import { readFileSync, writeFileSync } from 'fs';
-import { mainDisplay, extraccionDisplay, sinSaldoDisplay, ingresarDisplay, consultarSaldoDisplay, programaTerminadoMensaje, limpiarDisplay } from "./ui.js";
+import { mainUI, extraccionUI, sinSaldoUI, ingresarUI, consultarSaldoUI, programaTerminadoMensaje, limpiarUI } from "./ui.js";
 
 
 const rl = readline.createInterface({ input, output });
@@ -16,16 +16,16 @@ export default async function main() {
     let finalizar = false;
     let montoExtraer = 0;
     let inputUsuario = 0;
-    limpiarDisplay()
+    limpiarUI()
 
     do {// repetir
-        mainDisplay()
+        mainUI()
 
         let inputUsuario = parseInt(await rl.question(""));
 
         switch (inputUsuario) {
             case 1:
-                limpiarDisplay()
+                limpiarUI()
                 console.log("---------------------");
                 let monto = parseInt(await rl.question(`¿Cuanto dinero desea retirar?, Su saldo actual es de: $${saldo} `));
                 console.log("---------------------");
@@ -34,12 +34,12 @@ export default async function main() {
                     saldo = saldo - monto;
                     bancoDB.saldoDb = saldo
 
-                    extraccionDisplay(monto, saldo)
+                    extraccionUI(monto, saldo)
 
                     writeFileSync('./src/bancoDb.json', JSON.stringify(bancoDB, null, 2));
 
                 } else {
-                    sinSaldoDisplay(saldo)
+                    sinSaldoUI(saldo)
                     let salir = parseInt(await rl.question(""));
 
                     if (salir == 1) {
@@ -48,7 +48,7 @@ export default async function main() {
                 }
                 break;
             case 2:
-                limpiarDisplay()
+                limpiarUI()
                 console.log("---------------------");
                 let ingresar = parseInt(await rl.question("¿Cuanto dinero desea ingresar?"));
                 console.log("---------------------");
@@ -58,13 +58,13 @@ export default async function main() {
 
                     writeFileSync('./src/bancoDb.json', JSON.stringify(bancoDB, null, 2));
 
-                    ingresarDisplay(ingresar, saldo)
+                    ingresarUI(ingresar, saldo)
                 }
                 break;
 
             case 3:
 
-                consultarSaldoDisplay(saldo)
+                consultarSaldoUI(saldo)
 
                 break;
             case 4:
@@ -72,7 +72,7 @@ export default async function main() {
                 break;
 
             default:
-                limpiarDisplay()
+                limpiarUI()
                 console.log("Ingrese una opcion correcta");
 
 
