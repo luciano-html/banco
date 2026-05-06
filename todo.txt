@@ -1,1 +1,4 @@
-hay que modularizar las operaciones
+operaciones ahora es controlador
+
+falta resolver por que en controlador.js linea 22 la consulta me devuelve una 
+promesa en vez del valor esperado

@@ -23,7 +23,7 @@ export function sinSaldoUI(saldo) {
     console.clear()
     console.log("---------------------");
     console.log("Saldo insuficiente, no puede extraer mas de: $", saldo);
-    console.log("¿Desea salir? 1.Si 2.No");
+    
 }
 
 export function ingresarUI(ingresar,saldo){
@@ -40,7 +40,7 @@ export function consultarSaldoUI(saldo){
 }
 
 
-export function programaTerminadoMensaje(){
+export function programaTerminadoMensajeUI(){
     console.clear()
     console.log("---------------------");
     console.log("Programa terminado");
