@@ -13,8 +13,10 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "dev": "nodemon app.js",
-    "alumnos": "nodemon edadesAlumnos.js"
+     "dev": "nodemon app.js"
+  },
+  "nodemonConfig": {
+    "ignore": ["src/bancoDb.json"]
   },
   "keywords": [],
   "author": "",
