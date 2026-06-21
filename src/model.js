@@ -1,4 +1,4 @@
-import readline from 'readline/promises';
+
 import { stdin as input, stdout as output } from "node:process";
 import { writeFileSync, readFileSync } from 'fs';
 import { extraccionUI, sinSaldoUI, consultarSaldoUI } from './ui.js';
