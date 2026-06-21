@@ -13,8 +13,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "dev": "nodemon app.js",
-    "alumnos": "nodemon edadesAlumnos.js"
+    "dev": "nodemon server.js",
+    "app": "nodemon --delay 0.5 app.js"
   },
   "keywords": [],
   "author": "",
@@ -24,6 +24,7 @@
     "nodemon": "^3.1.14"
   },
   "dependencies": {
+    "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "mongoose": "^9.7.1"
   }
